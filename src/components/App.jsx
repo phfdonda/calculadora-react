@@ -6,7 +6,7 @@ import calculate from "../utils/calculate";
 
 
 function App() {
-  const [displayText, setDisplayText] = useState("");
+  const [displayText, setDisplayText] = useState(0);
 
   function handleClick(val) {
     calculate(val, displayText, setDisplayText)

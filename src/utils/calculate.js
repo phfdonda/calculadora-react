@@ -3,15 +3,23 @@ function calculate(val, displayText, setDisplayText) {
   const isNumber = /[0-9]/.test(val);
   const hasDot = /\./.test(dTxt);
   const noDotInThisNumber = /[+\-/*]\d+$/.test(dTxt)
-  const hasZeroBefore = /^0/.test(dTxt);
+  const hasEllipsis = /\.{3}$/.test(dTxt)
+  const startingZero = /^0$/.test(dTxt);
   const isOperation = (val) => /[+\-/*]/.test(val);
   const tooMuchOperation = isOperation(val) && isOperation(dTxt.slice(-1));
   const badEnding = /[+-/*]$/.test(dTxt);
   const clear = () => setDisplayText(0);
-  const deleteOne = () => setDisplayText(dTxt.slice(0, -1));
   let valType = val;
   if(isNumber) valType = 'number'
   if(isOperation(val)) valType = 'operator'
+
+
+  function deleteOne(){
+    if(hasEllipsis){
+      setDisplayText(dTxt.slice(0, -3));
+    }else
+    {setDisplayText(dTxt.slice(0, -1))}
+  }
 
   function handleOperator() {
     if (tooMuchOperation) {
@@ -21,7 +29,7 @@ function calculate(val, displayText, setDisplayText) {
     }
   }
   function handleNumber() {
-    if (hasZeroBefore) {
+    if (startingZero) {
       setDisplayText(val);
     } else {
       setDisplayText((prev) => prev + val);
