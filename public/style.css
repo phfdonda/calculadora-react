@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+
+*{
+  font-family: 'Roboto Mono', monospace;
+}
+
+body{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient();
+  background: #bdc3c7;
+  background: linear-gradient(to right, #2c3e50, #bdc3c7);
+
+}
+
+.calculator{
+  display: grid;
+  height: 320px;
+  width: 235px;
+  border-radius: 5px;
+  overflow: hidden;
+  color: black;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: 1fr repeat(5, 16%);
+  gap: 1px;
+}

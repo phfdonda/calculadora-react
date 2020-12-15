@@ -1,0 +1,32 @@
+:root {
+  --bg-btn: #f0f0f0;
+  --bg-btn-active: #888888;
+  --border-btn: 1px solid #888888;
+}
+
+.button{
+  font-size: 1.4em;
+  background-color: var(--bg-btn);
+  border: none;
+  border-right: var(--border-btn);
+  border-left: var(--border-btn);
+  outline: none;
+}
+
+.button:active {
+  background-color: var(--bg-btn-active);
+  color: white;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+.op {
+  background-color: goldenrod;
+  color: white;
+}
+
+.ac{
+  grid-column: span 2;
+}
